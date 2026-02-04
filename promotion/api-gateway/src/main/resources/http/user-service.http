@@ -3,10 +3,17 @@ POST http://localhost:8000/api/v1/users/signup
 Content-Type: application/json
 
 {
-  "email": "test@example.com",
+  "email": "test1@example.com",
   "password": "password123",
   "name": "Teest User"
 }
+//redis-rate-limiter.replenish-rate: 10
+//redis-rate-limiter.burst-capacity: 20
+//redis-rate-limiter.requested-tokens: 1
+
+//X-RateLimit-Remaining: 19  => 요청시마다 1씩 감소
+//X-RateLimit-Requested-Tokens: 1 => 요청시마다 1씩 증가
+
 
 ### User Login
 POST http://localhost:8000/api/v1/users/login

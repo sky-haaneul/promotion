@@ -4,10 +4,10 @@ server:
 spring:
   application:
     name: api-gateway
-#  data:
-#    redis:
-#      host: localhost
-#      port: 6379
+  data:
+    redis:
+      host: localhost
+      port: 6379
   cloud:
     gateway:
       server:
@@ -23,3 +23,11 @@ spring:
                 - Path=/api/v1/users/**
               filters:
                 - name: JwtAuthenticationFilter
+          default-filters:
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenish-rate: 10
+                redis-rate-limiter.burst-capacity: 20
+                redis-rate-limiter.requested-tokens: 1
+                key-resolver: "#{@userKeyResolver}"
+
