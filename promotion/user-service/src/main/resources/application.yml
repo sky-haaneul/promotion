@@ -27,7 +27,7 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 
 jwt:
-  secret: }-,HM;qpemR7J,8nPyIU&6:/Wz^1zO,bg>fn(1rJLGg
+  secret: 1ad35d74dc65cc0ee9a3a409f7f87e332aa6aa89d9cc64c66cdf9a1ffdc534ee
 
 server:
   port: 8004
