@@ -16,7 +16,7 @@ import java.util.List;
 public class CouponController {
     private final CouponService couponService;
 
-    @PostMapping
+    @PostMapping("/issue")
     public ResponseEntity<CouponDto.Response> issueCoupon(@RequestBody CouponDto.IssueRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(CouponDto.Response.from(couponService.issueCoupon(request)));
