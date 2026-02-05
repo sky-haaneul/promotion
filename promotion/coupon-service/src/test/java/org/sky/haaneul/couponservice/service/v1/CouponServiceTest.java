@@ -21,7 +21,6 @@ import java.util.Optional;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
@@ -46,7 +45,7 @@ class CouponServiceTest {
     void setUp() {
         couponPolicy = CouponPolicy.builder()
                 .id(1L)
-                .name("테스트 주문")
+                .title("테스트 주문")
                 .discountType(CouponPolicy.DiscountType.FIXED_AMOUNT)
                 .discountValue(1000)
                 .minimumOrderAmount(10000)

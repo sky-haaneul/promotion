@@ -47,7 +47,7 @@ public class CouponPolicyDto {
 
         public CouponPolicy toEntity() {
             return CouponPolicy.builder()
-                    .name(name)
+                    .title(name)
                     .description(description)
                     .discountType(discountType)
                     .discountValue(discountValue)
@@ -80,7 +80,7 @@ public class CouponPolicyDto {
         public static Response from(CouponPolicy couponPolicy) {
             return Response.builder()
                     .id(couponPolicy.getId())
-                    .name(couponPolicy.getName())
+                    .name(couponPolicy.getTitle())
                     .description(couponPolicy.getDescription())
                     .discountType(couponPolicy.getDiscountType())
                     .discountValue(couponPolicy.getDiscountValue())
