@@ -18,7 +18,7 @@ public class CouponPolicy {
     private Long id;
 
     @Column(nullable = false)
-    private String name;
+    private String title;
 
     @Column
     private String description;
