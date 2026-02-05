@@ -75,7 +75,7 @@ public class Coupon {
 
     public boolean isExpired() {
         LocalDateTime now = LocalDateTime.now();
-        return now.isBefore(couponPolicy.getStartTime() || now.isAfter(couponPolicy.getEndTime()));
+        return now.isBefore(couponPolicy.getStartTime()) || now.isAfter(couponPolicy.getEndTime());
     }
 
 
