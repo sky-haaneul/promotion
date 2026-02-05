@@ -8,7 +8,7 @@ import org.redisson.api.RAtomicLong;
 import org.redisson.api.RBucket;
 import org.redisson.api.RedissonClient;
 import org.sky.haaneul.couponservice.domain.CouponPolicy;
-import org.sky.haaneul.couponservice.dto.v1.CouponPolicyDto;
+import org.sky.haaneul.couponservice.dto.v2.CouponPolicyDto;
 import org.sky.haaneul.couponservice.exception.CouponPolicyNotFoundException;
 import org.sky.haaneul.couponservice.repository.CouponPolicyRepository;
 import org.springframework.stereotype.Service;

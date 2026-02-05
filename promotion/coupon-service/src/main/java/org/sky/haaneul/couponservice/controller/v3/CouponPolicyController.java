@@ -1,4 +1,4 @@
-package org.sky.haaneul.couponservice.controller.v2;
+package org.sky.haaneul.couponservice.controller.v3;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.RequiredArgsConstructor;
@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("couponPolicyControllerV2")
-@RequestMapping("/api/v2/coupon-policies")
+@RestController("couponPolicyControllerV3")
+@RequestMapping("/api/v3/coupon-policies")
 @RequiredArgsConstructor
 public class CouponPolicyController {
+
     private final CouponPolicyService couponPolicyService;
 
     @PostMapping
@@ -37,7 +38,6 @@ public class CouponPolicyController {
                         .toList()
         );
     }
-
 
 
 }

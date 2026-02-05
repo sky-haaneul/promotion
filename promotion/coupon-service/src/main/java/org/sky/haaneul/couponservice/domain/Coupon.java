@@ -78,6 +78,10 @@ public class Coupon {
         return now.isBefore(couponPolicy.getStartTime()) || now.isAfter(couponPolicy.getEndTime());
     }
 
+    public boolean isUsed() {
+        return status == Status.USED;
+    }
+
 
 
 }
