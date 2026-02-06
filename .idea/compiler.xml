@@ -8,6 +8,7 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.42/8365263844ebb62398e0dc33057ba10ba472d3b8/lombok-1.18.42.jar" />
         </processorPath>
         <module name="promotion.discovery-service.main" />
+        <module name="promotion.point-service.main" />
         <module name="promotion.api-gateway.main" />
         <module name="promotion.coupon-service.main" />
         <module name="promotion.user-service.main" />
@@ -23,6 +24,9 @@
       <module name="discovery-service" target="17" />
       <module name="discovery-service.main" target="17" />
       <module name="discovery-service.test" target="17" />
+      <module name="point-service" target="17" />
+      <module name="point-service.main" target="17" />
+      <module name="point-service.test" target="17" />
       <module name="user-service" target="17" />
       <module name="user-service.main" target="17" />
       <module name="user-service.test" target="17" />
@@ -39,6 +43,9 @@
       <module name="discovery-service" options="-parameters" />
       <module name="discovery-service.main" options="-parameters" />
       <module name="discovery-service.test" options="-parameters" />
+      <module name="point-service" options="-parameters" />
+      <module name="point-service.main" options="-parameters" />
+      <module name="point-service.test" options="-parameters" />
       <module name="promotion" options="-parameters" />
       <module name="promotion.api-gateway" options="-parameters" />
       <module name="promotion.api-gateway.main" options="-parameters" />
@@ -50,6 +57,9 @@
       <module name="promotion.discovery-service.main" options="-parameters" />
       <module name="promotion.discovery-service.test" options="-parameters" />
       <module name="promotion.main" options="-parameters" />
+      <module name="promotion.point-service" options="-parameters" />
+      <module name="promotion.point-service.main" options="-parameters" />
+      <module name="promotion.point-service.test" options="-parameters" />
       <module name="promotion.test" options="-parameters" />
       <module name="promotion.user-service" options="-parameters" />
       <module name="promotion.user-service.main" options="-parameters" />

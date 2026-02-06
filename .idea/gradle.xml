@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/promotion/api-gateway" />
             <option value="$PROJECT_DIR$/promotion/coupon-service" />
             <option value="$PROJECT_DIR$/promotion/discovery-service" />
+            <option value="$PROJECT_DIR$/promotion/point-service" />
             <option value="$PROJECT_DIR$/promotion/user-service" />
           </set>
         </option>
