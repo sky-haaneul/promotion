@@ -25,6 +25,9 @@
       <module name="discovery-service.main" target="17" />
       <module name="discovery-service.test" target="17" />
       <module name="point-service" target="17" />
+      <module name="point-service-batch" target="17" />
+      <module name="point-service-batch.main" target="17" />
+      <module name="point-service-batch.test" target="17" />
       <module name="point-service.main" target="17" />
       <module name="point-service.test" target="17" />
       <module name="user-service" target="17" />
@@ -44,6 +47,9 @@
       <module name="discovery-service.main" options="-parameters" />
       <module name="discovery-service.test" options="-parameters" />
       <module name="point-service" options="-parameters" />
+      <module name="point-service-batch" options="-parameters" />
+      <module name="point-service-batch.main" options="-parameters" />
+      <module name="point-service-batch.test" options="-parameters" />
       <module name="point-service.main" options="-parameters" />
       <module name="point-service.test" options="-parameters" />
       <module name="promotion" options="-parameters" />
@@ -58,6 +64,9 @@
       <module name="promotion.discovery-service.test" options="-parameters" />
       <module name="promotion.main" options="-parameters" />
       <module name="promotion.point-service" options="-parameters" />
+      <module name="promotion.point-service-batch" options="-parameters" />
+      <module name="promotion.point-service-batch.main" options="-parameters" />
+      <module name="promotion.point-service-batch.test" options="-parameters" />
       <module name="promotion.point-service.main" options="-parameters" />
       <module name="promotion.point-service.test" options="-parameters" />
       <module name="promotion.test" options="-parameters" />

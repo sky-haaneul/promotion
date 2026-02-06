@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:pointdb
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+sql:
+  init:
+    mode: always
+    schema-locations: classpath:org/springframework/batch/core/schema-h2.sql, classpath:schema.sql
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  batch:
+    job:
+      enabled: false # 기본 job 실행 비활성화 -> 하나씩 직접 실행하는 코드로 구현했기 때문
+    jdbc:
+      initialize-schema: never
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+logging:
+  level:
+    org.springframework.batch: DEBUG
+    org.sky.haaneul.pointservicebatch: DEBUG
