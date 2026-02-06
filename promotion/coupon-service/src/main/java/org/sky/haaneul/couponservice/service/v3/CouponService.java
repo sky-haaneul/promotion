@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RAtomicLong;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
+import org.sky.haaneul.couponservice.aop.CouponMetered;
 import org.sky.haaneul.couponservice.config.UserIdInterceptor;
 import org.sky.haaneul.couponservice.domain.Coupon;
 import org.sky.haaneul.couponservice.domain.CouponPolicy;
@@ -36,6 +37,7 @@ public class CouponService {
     private final CouponPolicyService couponPolicyService;
 
     @Transactional(readOnly = true)
+    @CouponMetered(version = "v3")
     public void requestCouponIssue(CouponDto.IssueRequest request) {
         String quantityKey = COUPON_QUANTITY_KEY + request.getCouponPolicyId();
         String lockKey = COUPON_LOCK_KEY + request.getCouponPolicyId();

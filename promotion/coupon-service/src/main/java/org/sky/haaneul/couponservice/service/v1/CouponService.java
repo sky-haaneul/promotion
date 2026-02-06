@@ -1,6 +1,7 @@
 package org.sky.haaneul.couponservice.service.v1;
 
 import lombok.RequiredArgsConstructor;
+import org.sky.haaneul.couponservice.aop.CouponMetered;
 import org.sky.haaneul.couponservice.config.UserIdInterceptor;
 import org.sky.haaneul.couponservice.domain.Coupon;
 import org.sky.haaneul.couponservice.domain.CouponPolicy;
@@ -45,6 +46,7 @@ public class CouponService {
      *
      */
     @Transactional
+    @CouponMetered(version = "v1")
     public Coupon issueCoupon(CouponDto.IssueRequest request) {
         CouponPolicy couponPolicy = couponPolicyRepository.findByIdWithLock(request.getCouponPolicyId())
                 .orElseThrow(() -> new CouponIssueException("쿠폰 정책을 찾을 수 없습니다."));
