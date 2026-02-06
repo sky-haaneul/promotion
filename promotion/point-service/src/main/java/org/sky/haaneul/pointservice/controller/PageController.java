@@ -1,4 +1,4 @@
-package org.sky.haaneul.pointservice.controller.v1;
+package org.sky.haaneul.pointservice.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

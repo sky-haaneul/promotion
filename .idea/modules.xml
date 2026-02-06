@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/api-gateway/promotion.api-gateway.main.iml" filepath="$PROJECT_DIR$/.idea/modules/api-gateway/promotion.api-gateway.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/coupon-service/promotion.coupon-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/coupon-service/promotion.coupon-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/discovery-service/promotion.discovery-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/discovery-service/promotion.discovery-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/point-service/promotion.point-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/point-service/promotion.point-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/user-service/promotion.user-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/user-service/promotion.user-service.main.iml" />
     </modules>
   </component>
