@@ -1,4 +1,4 @@
-package org.sky.haaneul.timesaleservice.controller;
+package org.sky.haaneul.timesaleservice.controller.v1;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/time-sale")
+@RequestMapping("/api/v1/time-sales")
 @RequiredArgsConstructor
 public class TimeSaleController {
     private final TimeSaleService timeSaleService;

@@ -1,4 +1,4 @@
-package org.sky.haaneul.timesaleservice.controller;
+package org.sky.haaneul.timesaleservice.controller.v1;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
