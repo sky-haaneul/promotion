@@ -1,6 +1,7 @@
 package org.sky.haaneul.pointservice.service.v1;
 
 import lombok.RequiredArgsConstructor;
+import org.sky.haaneul.pointservice.aop.PointMetered;
 import org.sky.haaneul.pointservice.domain.Point;
 import org.sky.haaneul.pointservice.domain.PointBalance;
 import org.sky.haaneul.pointservice.domain.PointType;
@@ -20,6 +21,7 @@ public class PointService {
 
     // 포인트 획득
     @Transactional(isolation = Isolation.REPEATABLE_READ)
+    @PointMetered(version = "v1")
     public Point earnPoints(Long userId, Long amount, String description) {
         PointBalance pointBalance = pointBalanceRepository.findByUserId(userId)
                 .orElseGet(() -> PointBalance.builder()
@@ -45,6 +47,7 @@ public class PointService {
 
     // 포인트 사용
     @Transactional(isolation = Isolation.REPEATABLE_READ)
+    @PointMetered(version = "v1")
     public Point usePoints(Long userId, Long amount, String description) {
         PointBalance pointBalance = pointBalanceRepository.findByUserId(userId)
                 .orElseThrow(() -> new IllegalArgumentException("User not found"));
@@ -66,6 +69,7 @@ public class PointService {
 
     // 포인트 취소
     @Transactional(isolation = Isolation.REPEATABLE_READ)
+    @PointMetered(version = "v1")
     public Point cancelPoints(Long pointId, String description) {
         Point originalPoint = pointRepository.findById(pointId)
                 .orElseThrow(() -> new IllegalArgumentException("Point not found"));

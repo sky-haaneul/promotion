@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.redisson.api.RLock;
 import org.redisson.api.RMap;
 import org.redisson.api.RedissonClient;
+import org.sky.haaneul.pointservice.aop.PointMetered;
 import org.sky.haaneul.pointservice.domain.Point;
 import org.sky.haaneul.pointservice.domain.PointBalance;
 import org.sky.haaneul.pointservice.domain.PointType;
@@ -36,6 +37,7 @@ public class PointRedisService {
      * 5. 포인트 이력 저장
      */
     @Transactional
+    @PointMetered(version = "v2")
     public Point earnPoints(Long userId, Long amount, String description) {
         // 분산 락 획득
         RLock lock = redissonClient.getLock(POINT_LOCK_PREFIX + userId);
@@ -119,6 +121,7 @@ public class PointRedisService {
      * 6. 포인트 이력 저장
      */
     @Transactional
+    @PointMetered(version = "v2")
     public Point usePoints(Long userId, Long amount, String description) {
         // 분산 락 획득
         RLock lock = redissonClient.getLock(POINT_LOCK_PREFIX + userId);
