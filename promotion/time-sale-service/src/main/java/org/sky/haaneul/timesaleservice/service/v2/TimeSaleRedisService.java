@@ -59,7 +59,7 @@ public class TimeSaleRedisService {
         return savedTimeSale;
     }
 
-    private void saveToRedis(TimeSale timeSale) {
+    public void saveToRedis(TimeSale timeSale) {
         String json = null;
         try {
             json = objectMapper.writeValueAsString(timeSale);

@@ -1,8 +1,7 @@
 package org.sky.haaneul.timesaleservice.dto;
 
 import jakarta.validation.constraints.*;
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 import org.sky.haaneul.timesaleservice.domain.TimeSale;
 import org.springframework.http.ResponseEntity;
 
@@ -93,5 +92,18 @@ public class TimeSaleDto {
                     .build();
         }
 
+    }
+
+
+    @Data
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class AsyncPurchaseResponse {
+        private String requestId;  // 실제 구매요청 후 UUID
+        private String status;  // 현재 구매 상태 (초기 : PENDING -> COMPLETED가 될때까지 해당 메시지를 계속 받게됨)
+        // 구매가 실제 일어나면 queuePosition과 totalWaiting이 감소
+        private Integer queuePosition;
+        private Long totalWaiting;
     }
 }
