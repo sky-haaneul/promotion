@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.proxy.HibernateProxy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -95,5 +96,12 @@ public class TimeSale {
         if (now.isBefore(startAt) || now.isAfter(endAt)) {
             throw new IllegalStateException("Time sale is not in valid period");
         }
+    }
+
+    public Product getProduct() {
+        if (this.product instanceof HibernateProxy) {  // product객체를 HibernateLazyInitializer를 통해서 실제 Product를 객체로 만들어서 반환
+            return (Product) ((HibernateProxy) this.product).getHibernateLazyInitializer().getImplementation();
+        }
+        return this.product;
     }
 }
