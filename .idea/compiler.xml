@@ -10,6 +10,7 @@
         <module name="promotion.discovery-service.main" />
         <module name="promotion.point-service.main" />
         <module name="promotion.api-gateway.main" />
+        <module name="promotion.point-service-batch.main" />
         <module name="promotion.coupon-service.main" />
         <module name="promotion.user-service.main" />
       </profile>

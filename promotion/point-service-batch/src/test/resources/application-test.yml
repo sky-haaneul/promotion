@@ -10,6 +10,12 @@ spring:
       mode: always
       schema-locations: classpath:org/springframework/batch/core/schema-h2.sql, classpath:schema.sql
 
+  batch:
+    job:
+      enabled: false  # 테스트 시 자동 실행 방지
+    jdbc:
+      initialize-schema: never
+
   jpa:
     hibernate:
       ddl-auto: none
@@ -17,19 +23,11 @@ spring:
     properties:
       hibernate:
         format_sql: true
-
-  batch:
-    job:
-      enabled: false  # 기본 job 실행 비활성화
-    jdbc:
-      initialize-schema: never
-
   data:
     redis:
       host: localhost
       port: 6379
 
-logging:
-  level:
-    org.springframework.batch: DEBUG
-    com.fastcampus.pointservicebatch: DEBUG
+eureka:
+  client:
+    enabled: false  # Eureka 클라이언트 비활성화
