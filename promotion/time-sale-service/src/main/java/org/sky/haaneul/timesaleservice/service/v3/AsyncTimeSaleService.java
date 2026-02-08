@@ -3,6 +3,7 @@ package org.sky.haaneul.timesaleservice.service.v3;
 import lombok.RequiredArgsConstructor;
 import org.redisson.api.RBucket;
 import org.redisson.api.RedissonClient;
+import org.sky.haaneul.timesaleservice.aop.TimeSaleMetered;
 import org.sky.haaneul.timesaleservice.domain.TimeSale;
 import org.sky.haaneul.timesaleservice.dto.TimeSaleDto;
 import org.sky.haaneul.timesaleservice.service.v2.TimeSaleRedisService;
@@ -31,6 +32,7 @@ public class AsyncTimeSaleService {
         return timeSaleRedisService.getOngoingTimeSales(pageable);
     }
 
+    @TimeSaleMetered(version = "v3")
     public String purchaseTimeSale(Long timeSaleId, TimeSaleDto.PurchaseRequest request) {
         // 구매 요청을 Kafka로 전송하고 요청 ID를 반환
         return timeSaleProducer.sendPurchaseRequest(timeSaleId, request.getUserId(), request.getQuantity());

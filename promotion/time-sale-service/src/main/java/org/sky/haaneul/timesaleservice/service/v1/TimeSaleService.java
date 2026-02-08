@@ -1,6 +1,7 @@
 package org.sky.haaneul.timesaleservice.service.v1;
 
 import lombok.RequiredArgsConstructor;
+import org.sky.haaneul.timesaleservice.aop.TimeSaleMetered;
 import org.sky.haaneul.timesaleservice.domain.Product;
 import org.sky.haaneul.timesaleservice.domain.TimeSale;
 import org.sky.haaneul.timesaleservice.domain.TimeSaleOrder;
@@ -60,6 +61,7 @@ public class TimeSaleService {
 
     // 진행중인 타임세일
     @Transactional
+    @TimeSaleMetered(version = "v1")
     public TimeSale purchasesTimeSale(Long timeSaleId, TimeSaleDto.PurchaseRequest request) {
         TimeSale timeSale = timeSaleRepository.findByIdWithPessimisticLock(timeSaleId)
                 .orElseThrow(() -> new IllegalArgumentException("TimeSale not found"));

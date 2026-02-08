@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RBucket;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
+import org.sky.haaneul.timesaleservice.aop.TimeSaleMetered;
 import org.sky.haaneul.timesaleservice.domain.Product;
 import org.sky.haaneul.timesaleservice.domain.TimeSale;
 import org.sky.haaneul.timesaleservice.domain.TimeSaleOrder;
@@ -108,6 +109,7 @@ public class TimeSaleRedisService {
     }
 
     @Transactional
+    @TimeSaleMetered(version = "v2")
     public TimeSale purchaseTimeSale(Long timeSaleId, TimeSaleDto.PurchaseRequest request) {
         RLock lock = redissonClient.getLock(TIME_SALE_LOCK + timeSaleId);
         if (lock == null) {
