@@ -20,10 +20,10 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class TimeSaleProducer {
     // Kafka 토픽 이름
-    private static final String TOPIC = "time-sale-request";
+    private static final String TOPIC = "time-sale-requests";
 
     // Redis 키 접두사
-    private static final String QUEUE_KEY = "time-sale:queue";
+    private static final String QUEUE_KEY = "time-sale-queue:";
     private static final String RESULT_PREFIX = "purchase-result:";
     private static final String TOTAL_REQUESTS_KEY = "time-sale-total-requests:";
 
